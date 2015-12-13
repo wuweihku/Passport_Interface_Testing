@@ -33,6 +33,31 @@ class test_register(unittest.TestCase):
                     response_dict = eval(response.read())                               #读取发回的数据,并将字符串转换为字典 
                     self.assertEqual(response_dict["res"], eval(row['res']))            #用户名注册模块---您看到此信息,代表当行测试数据未通过---   
 
+#对应模块:登录、快速登录
+class test_login(unittest.TestCase):
+    url = 'http://passportapi.15166.com/user/login'
+
+    def setUp(self):  
+        pass
+    
+    def tearDown(self):
+        pass
+
+    def test_login_cases(self): 
+        with open('login_data.csv') as csvfile:
+            reader = csv.DictReader(csvfile) 
+            login_num=0
+            for row in reader: 
+                login_num+=1 
+                with self.subTest(row=row): 
+                    print("正在为'登录、快速登录模块'执行第 %d 条测试数据"%login_num) 
+                    info = {'appid': row['appid'], 'username': row['username'], 'mail': row['mail'], 'phone': row['phone'],'password': row['password'],'guid': row['guid'],'sessionid': row['sessionid']}
+                    data = urllib.parse.urlencode(info).encode(encoding='UTF8')
+                    req = urllib.request.Request(test_register.url, data) 
+                    response = urllib.request.urlopen(req) 
+                    response_dict = eval(response.read())
+                    self.assertEqual(response_dict["res"], eval(row['res']))            #登录、快速登录模块---您看到此信息,代表当行测试数据未通过---    
+
 
 '''
 unittest.main(),固定格式,用于默认调用unittest模块
