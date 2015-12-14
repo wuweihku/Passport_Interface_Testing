@@ -32,8 +32,8 @@ class test_signup(unittest.TestCase):
                     response = urllib.request.urlopen(req)                              #执行post请求
                     response_dict = eval(response.read())                               #读取发回的数据,并将字符串转换为字典 
                     self.assertEqual(response_dict["res"], eval(row['res']))            #用户名注册模块---您看到此信息,代表当行测试数据未通过---   
-
-#对应模块:2.2登录、快速登录
+        print("----------------------------------------------------------------------------------------------------------------------")
+#对应模块:2.2登录及快速登录
 class test_login(unittest.TestCase):
     url = 'http://passportapi.15166.com/user/login'
 
@@ -50,7 +50,7 @@ class test_login(unittest.TestCase):
             for row in reader: 
                 login_num+=1 
                 with self.subTest(row=row): 
-                    print("正在为'登录、快速登录模块'执行第 %d 条测试数据"%login_num) 
+                    print("正在为'登录及快速登录模块'执行第 %d 条测试数据"%login_num) 
                     
                     #留空就判不合法了，不需要的参数我是直接当成不传的--邓棚云
                     #sessionid可以为空
@@ -72,6 +72,7 @@ class test_login(unittest.TestCase):
                     response = urllib.request.urlopen(req) 
                     response_dict = eval(response.read())
                     self.assertEqual(response_dict["res"], eval(row['res']))            #登录、快速登录模块---您看到此信息,代表当行测试数据未通过---    
+        print("----------------------------------------------------------------------------------------------------------------------")
 
 #对应模块:2.3获取绑定手机
 class test_findbindphone(unittest.TestCase):
@@ -98,6 +99,7 @@ class test_findbindphone(unittest.TestCase):
                     response = urllib.request.urlopen(req)
                     response_dict = eval(response.read())
                     self.assertEqual(response_dict["res"], eval(row['res']))            #获取绑定手机模块---您看到此信息,代表当行测试数据未通过---                        
+        print("----------------------------------------------------------------------------------------------------------------------")
 
 #对应模块:2.4获取验证码
 class test_getcode(unittest.TestCase):
@@ -130,6 +132,7 @@ class test_getcode(unittest.TestCase):
                     # print(response_dict["code_id"]+"用于显示一个5分钟有效期的code_id,以方便2.5/2.6模块进行测试")
                     # print(response_dict)
                     self.assertEqual(response_dict["res"], eval(row['res']))            #获取验证码模块---您看到此信息,代表当行测试数据未通过---
+        print("----------------------------------------------------------------------------------------------------------------------")
                     
 #对应模块:2.5找回密码
 class test_changepwdbycode(unittest.TestCase):
@@ -162,6 +165,7 @@ class test_changepwdbycode(unittest.TestCase):
                     response = urllib.request.urlopen(req)
                     response_dict = eval(response.read())
                     self.assertEqual(response_dict["res"], eval(row['res']))            #找回密码模块---您看到此信息,代表当行测试数据未通过---
+        print("----------------------------------------------------------------------------------------------------------------------")
             
 #对应模块:2.6绑定手机
 class test_bindphone(unittest.TestCase):
@@ -189,6 +193,7 @@ class test_bindphone(unittest.TestCase):
                     response = urllib.request.urlopen(req)
                     response_dict = eval(response.read())
                     self.assertEqual(response_dict["res"], eval(row['res']))            #绑定手机模块---您看到此信息,代表当行测试数据未通过---
+        print("----------------------------------------------------------------------------------------------------------------------")
 
 #对应模块:2.7修改信息
 class test_editinfo(unittest.TestCase):
@@ -215,6 +220,7 @@ class test_editinfo(unittest.TestCase):
                     response = urllib.request.urlopen(req)
                     response_dict = eval(response.read())
                     self.assertEqual(response_dict["res"], eval(row['res']))            #修改信息模块---您看到此信息,代表当行测试数据未通过---
+        print("----------------------------------------------------------------------------------------------------------------------")
 
 #对应模块:2.8完善用户名
 class test_addusername(unittest.TestCase):
@@ -240,8 +246,8 @@ class test_addusername(unittest.TestCase):
                     response = urllib.request.urlopen(req)
                     response_dict = eval(response.read())
                     self.assertEqual(response_dict["res"], eval(row['res']))            #完善用户名模块---您看到此信息,代表当行测试数据未通过---
+        print("----------------------------------------------------------------------------------------------------------------------")
                     
-
                  
 '''
 unittest.main(),固定格式,用于默认调用unittest模块
