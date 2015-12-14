@@ -26,7 +26,7 @@ class test_register(unittest.TestCase):
                 register_num+=1                                                         
                 with self.subTest(row=row):                                             #row=i,会报错row is not defined,必须用row=row(这里用的是subTest功能)
                     print("正在为'用户名注册模块'执行第 %d 条测试数据"%register_num)                                              #每跑一条数据,显示一次当前进度
-                    info = {'appid': row['appid'], 'username': row['username'], 'password': row['password'], 'repassword': row['repassword']} #csv里的每一行测试实例
+                    info = {'appid': row['appid'], 'username': row['username'], 'password': row['password'], 'repassword': row['repassword']} #csv里的每一行测试实例，这里不用过滤空值，空值可以作为测试用例，引发异常
                     data = urllib.parse.urlencode(info).encode(encoding='UTF8')         #将信息编码成urllib能够识别的类型,注意的是python2.7用的ASCII编码,python3.X要UTF8转码  
                     req = urllib.request.Request(test_register.url, data)               #构造请求对象  
                     response = urllib.request.urlopen(req)                              #执行post请求
@@ -51,14 +51,28 @@ class test_login(unittest.TestCase):
                 login_num+=1 
                 with self.subTest(row=row): 
                     print("正在为'登录、快速登录模块'执行第 %d 条测试数据"%login_num) 
+                    
+                    #留空就判不合法了，不需要的参数我是直接当成不传的--邓棚云
+                    #sessionid可以为空
+                    #guid可以为空
+                    #username、mail、phone三者不能同时为空
+                    #实际情况是，机会会字典限制你传递的值，你根本没机会同时传手机+用户名+邮箱过去，因为有优先级判断，也有填数据的入口限制
+                    #所以在这里读取字典的时候，就要过滤空值了
+                
                     info = {'appid': row['appid'], 'username': row['username'], 'mail': row['mail'], 'phone': row['phone'],'password': row['password'],'guid': row['guid'],'sessionid': row['sessionid']}
+                    list_del = []                                                       #定义一个用来存储空值键的列表
+                    for k in info.keys():
+                        if info[k] =='':                                                #判断对应键的值为空时，将该键加入list_del待删除
+                            list_del.append(k)
+                    for i in list_del:                                                  #一一删除存储在list_del中的空值键
+                        del info[i] 
+
                     data = urllib.parse.urlencode(info).encode(encoding='UTF8')
-                    req = urllib.request.Request(test_register.url, data) 
+                    req = urllib.request.Request(test_login.url, data) 
                     response = urllib.request.urlopen(req) 
                     response_dict = eval(response.read())
                     self.assertEqual(response_dict["res"], eval(row['res']))            #登录、快速登录模块---您看到此信息,代表当行测试数据未通过---    
-
-
+                 
 '''
 unittest.main(),固定格式,用于默认调用unittest模块
 '''
