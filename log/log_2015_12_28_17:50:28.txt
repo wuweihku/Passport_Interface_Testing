@@ -1,6 +1,6 @@
 ....
 ======================================================================
-FAIL: test_addusername_cases (__main__.test_addusername) (row={'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'guid': '', 'res': '10000', 'password': '123456', 'username': 'leecahk1u'})
+FAIL: test_addusername_cases (__main__.test_addusername) (row={'username': 'leecahk1u', 'phone': '15692005742', 'res': '10000', 'password': '123456', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'guid': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 251, in test_addusername_cases
@@ -8,7 +8,7 @@ Traceback (most recent call last):
 AssertionError: 10008 != 10000
 
 ======================================================================
-FAIL: test_bindphone_cases (__main__.test_bindphone) (row={'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'guid': '', 'username': 'wuweihku', 'password': '123456', 'code_id': '', 'res': '10001'})
+FAIL: test_bindphone_cases (__main__.test_bindphone) (row={'username': 'wuweihku', 'code_id': '', 'phone': '15692005742', 'res': '10001', 'password': '123456', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'guid': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 198, in test_bindphone_cases
@@ -16,7 +16,7 @@ Traceback (most recent call last):
 AssertionError: 10011 != 10001
 
 ======================================================================
-FAIL: test_changepwdbycode_cases (__main__.test_changepwdbycode) (row={'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'username': 'wuweihku', 'password': '654321', 'code_id': '566e7427972c9', 'res': '10001'})
+FAIL: test_changepwdbycode_cases (__main__.test_changepwdbycode) (row={'username': 'wuweihku', 'phone': '15692005742', 'res': '10001', 'password': '654321', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'code_id': '566e7427972c9'})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 170, in test_changepwdbycode_cases
@@ -24,7 +24,7 @@ Traceback (most recent call last):
 AssertionError: 10011 != 10001
 
 ======================================================================
-FAIL: test_getcode_cases (__main__.test_getcode) (row={'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'code_type': '1', 'guid': '', 'res': '10009', 'username': 'wuwei123123'})
+FAIL: test_getcode_cases (__main__.test_getcode) (row={'username': 'wuwei123123', 'phone': '15692005742', 'code_type': '1', 'res': '10009', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'guid': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 137, in test_getcode_cases
@@ -32,6 +32,6 @@ Traceback (most recent call last):
 AssertionError: 10017 != 10009
 
 ----------------------------------------------------------------------
-Ran 8 tests in 9.823s
+Ran 8 tests in 9.731s
 
 FAILED (failures=4)

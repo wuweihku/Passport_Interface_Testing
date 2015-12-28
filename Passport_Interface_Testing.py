@@ -21,7 +21,7 @@ class test_signup(unittest.TestCase):
         pass
 
     def test_signup_cases(self):                                                            #执行测试功能的函数
-        with open('signup_data.csv') as csvfile:                                            #打开csv文件流
+        with open('csv/signup_data.csv') as csvfile:                                            #打开csv文件流
             reader = csv.DictReader(csvfile)                                                #创建文件流对象
             signup_num=0                                                                    #计算一共跑了多少条测试数据
             for row in reader:                                                              #这里的row对应csv表里的一行数据,第一行数据自动作为字段名,第二行数据开始作为测试实例
@@ -47,7 +47,7 @@ class test_login(unittest.TestCase):
         pass
 
     def test_login_cases(self): 
-        with open('login_data.csv') as csvfile:
+        with open('csv/login_data.csv') as csvfile:
             reader = csv.DictReader(csvfile) 
             login_num=0
             for row in reader: 
@@ -88,7 +88,7 @@ class test_findbindphone(unittest.TestCase):
         pass
 
     def test_findbindphone_cases(self):
-        with open('findbindphone_data.csv') as csvfile:
+        with open('csv/findbindphone_data.csv') as csvfile:
             reader = csv.DictReader(csvfile) 
             findbindphone_num=0
             for row in reader: 
@@ -115,7 +115,7 @@ class test_getcode(unittest.TestCase):
         pass
 
     def test_getcode_cases(self):
-        with open('getcode_data.csv') as csvfile:
+        with open('csv/getcode_data.csv') as csvfile:
             reader = csv.DictReader(csvfile)
             getcode_num=0
             for row in reader:
@@ -148,7 +148,7 @@ class test_changepwdbycode(unittest.TestCase):
         pass
     
     def test_changepwdbycode_cases(self):
-        with open('changepwdbycode_data.csv') as csvfile:
+        with open('csv/changepwdbycode_data.csv') as csvfile:
             reader = csv.DictReader(csvfile) 
             changepwdbycode_num=0
             for row in reader:
@@ -181,7 +181,7 @@ class test_bindphone(unittest.TestCase):
         pass
 
     def test_bindphone_cases(self):
-        with open('bindphone_data.csv') as csvfile:
+        with open('csv/bindphone_data.csv') as csvfile:
             reader = csv.DictReader(csvfile)
             bindphone_num=0 
             for row in reader:
@@ -209,7 +209,7 @@ class test_editinfo(unittest.TestCase):
         pass
 
     def test_editinfo_cases(self):
-        with open('editinfo_data.csv') as csvfile:
+        with open('csv/editinfo_data.csv') as csvfile:
             reader = csv.DictReader(csvfile)
             editinfo_num=0
             for row in reader:
@@ -236,7 +236,7 @@ class test_addusername(unittest.TestCase):
         pass
 
     def test_addusername_cases(self):
-        with open('addusername_data.csv') as csvfile:
+        with open('csv/addusername_data.csv') as csvfile:
             reader = csv.DictReader(csvfile)
             addusername_num=0
             for row in reader:
