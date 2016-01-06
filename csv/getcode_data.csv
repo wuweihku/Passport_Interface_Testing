@@ -17,3 +17,4 @@ code_type非法-3,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,qatest1,15692005742,3,,1001
 code_type非法字符,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,qatest1,15692005742,%,,10012
 code_type正确且成功,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,qatest6,13427680261,1,,10001
 username为空使用guid成功,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,,15692005742,1,thisisguid,10001
+testblind获取验证码用于修改密码,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,testblind,18011963147,2,,10001
