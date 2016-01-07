@@ -1,1 +1,10 @@
 comments,appid,username,mail,phone,password,guid,sessionid,res
+appid为空,,qatest1,,,123456,,,10002
+appid错误,wrongappid,qatest1,,,123456,,,10002
+使用sessionid登录失败,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,,,,,,wrongsessionid,10010
+使用guid登录,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,,,,,thisisguid,,10001
+使用username登录失败-不存在,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,qatestnone,,,123456,,,10009
+使用username登录成功,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,qatest1,,,123456,,,10001
+使用phone登录失败-不存在,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,,,13950913012,123456,,,10009
+使用phone登录成功,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,,,15692005742,123456,,,10001
+password错误,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,qatest1,,,wrongpassword,,,10016

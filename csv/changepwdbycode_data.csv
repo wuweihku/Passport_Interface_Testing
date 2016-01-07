@@ -14,4 +14,3 @@ password非法-5位,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,123456,testblind,15692005
 password非法-20+位,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,123456,testblind,15692005742,1234567890123456789012345,10011
 password非法字符,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,123456,testblind,15692005742,12345#$%,10011
 password中文,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,123456,testblind,15692005742,中文密码,10011
-testblind修改密码,4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L,999,testblind,18011963147,654321,10001

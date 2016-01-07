@@ -1,6 +1,15 @@
-..
+.
 ======================================================================
-FAIL: test_addusername_cases (__main__.test_addusername) (row={'guid': '', 'password': '', 'phone': '', 'username': 'qatesta', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10011', 'comments': 'guid为空且phone为空'})
+ERROR: test_login_cases (__main__.test_login) (row={'comments': '使用phone登录成功', 'password': '123456', 'username': '', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'res': '10001', 'sessionid': '', 'guid': '', 'mail': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "Passport_Interface_Testing.py", line 76, in test_login_cases
+    response_dict = eval(response.read())
+  File "<string>", line 1, in <module>
+NameError: name 'null' is not defined
+
+======================================================================
+FAIL: test_addusername_cases (__main__.test_addusername) (row={'comments': 'guid为空且phone为空', 'password': '', 'username': 'qatesta', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '', 'res': '10011', 'guid': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 251, in test_addusername_cases
@@ -8,7 +17,7 @@ Traceback (most recent call last):
 AssertionError: 10005 != 10011
 
 ======================================================================
-FAIL: test_bindphone_cases (__main__.test_bindphone) (row={'guid': '', 'phone': '15692005742', 'password': '123456', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10014', 'code_id': '123456', 'comments': 'code_id错误'})
+FAIL: test_bindphone_cases (__main__.test_bindphone) (row={'code_id': '123456', 'comments': 'code_id错误', 'password': '123456', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'res': '10014', 'guid': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 198, in test_bindphone_cases
@@ -16,7 +25,7 @@ Traceback (most recent call last):
 AssertionError: 10011 != 10014
 
 ======================================================================
-FAIL: test_changepwdbycode_cases (__main__.test_changepwdbycode) (row={'phone': '15692005742', 'password': '123456', 'username': 'testblind', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10014', 'code_id': '123456', 'comments': 'code_id错误'})
+FAIL: test_changepwdbycode_cases (__main__.test_changepwdbycode) (row={'code_id': '123456', 'comments': 'code_id错误', 'password': '123456', 'username': 'testblind', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'res': '10014'})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 170, in test_changepwdbycode_cases
@@ -24,15 +33,7 @@ Traceback (most recent call last):
 AssertionError: 10011 != 10014
 
 ======================================================================
-FAIL: test_changepwdbycode_cases (__main__.test_changepwdbycode) (row={'phone': '18011963147', 'password': '654321', 'username': 'testblind', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10001', 'code_id': '999', 'comments': 'testblind修改密码'})
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "Passport_Interface_Testing.py", line 170, in test_changepwdbycode_cases
-    self.assertEqual(response_dict["res"], eval(row['res']))    #找回密码模块---您看到此信息,代表当行测试数据未通过---
-AssertionError: 10011 != 10001
-
-======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '', 'address': '', 'job': '', 'username': 'qatest1', 'res': '10002', 'province': '', 'gender': '', 'income': '', 'comments': 'appid为空', 'appid': '', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'appid为空', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'qatest1', 'appid': '', 'province': '', 'postcode': '', 'res': '10002', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -40,7 +41,7 @@ Traceback (most recent call last):
 AssertionError: 10001 != 10002
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '', 'address': '', 'job': '', 'username': 'qatest1', 'res': '10002', 'province': '', 'gender': '', 'income': '', 'comments': 'appid错误', 'appid': 'wrongappid', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'appid错误', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'qatest1', 'appid': 'wrongappid', 'province': '', 'postcode': '', 'res': '10002', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -48,7 +49,7 @@ Traceback (most recent call last):
 AssertionError: 10000 != 10002
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '', 'address': '', 'job': '', 'username': 'testnothere', 'res': '10009', 'province': '', 'gender': '', 'income': '', 'comments': 'username不存在', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'username不存在', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'testnothere', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'province': '', 'postcode': '', 'res': '10009', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -56,7 +57,7 @@ Traceback (most recent call last):
 AssertionError: 10000 != 10009
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '', 'address': '', 'job': '', 'username': 'qatest1', 'res': '10011', 'province': '', 'gender': '', 'income': '', 'comments': 'nickname非法字符', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'education': '', 'industry': '', 'nickname': 'nickname#$'})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'nickname非法字符', 'gender': '', 'nickname': 'nickname#$', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'province': '', 'postcode': '', 'res': '10011', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -64,7 +65,7 @@ Traceback (most recent call last):
 AssertionError: 10001 != 10011
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': 'post#$', 'address': '', 'job': '', 'username': 'qatest1', 'res': '10011', 'province': '', 'gender': '', 'income': '', 'comments': 'postcode非法', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'postcode非法', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'province': '', 'postcode': 'post#$', 'res': '10011', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -72,7 +73,7 @@ Traceback (most recent call last):
 AssertionError: 10001 != 10011
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '123', 'address': '', 'job': '', 'username': 'qatest1', 'res': '10011', 'province': '', 'gender': '', 'income': '', 'comments': 'postcode非法', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'postcode非法', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'province': '', 'postcode': '123', 'res': '10011', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -80,7 +81,7 @@ Traceback (most recent call last):
 AssertionError: 10001 != 10011
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '', 'address': 'address@#$', 'job': '', 'username': 'qatest1', 'res': '10011', 'province': '', 'gender': '', 'income': '', 'comments': 'address非法', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'address非法', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': 'address@#$', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'province': '', 'postcode': '', 'res': '10011', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -88,7 +89,7 @@ Traceback (most recent call last):
 AssertionError: 10001 != 10011
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '', 'address': '', 'job': '', 'username': 'qatest1', 'res': '10011', 'province': '0', 'gender': '', 'income': '', 'comments': 'province非法', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'province非法', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'province': '0', 'postcode': '', 'res': '10011', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -96,7 +97,7 @@ Traceback (most recent call last):
 AssertionError: 10001 != 10011
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '', 'address': '', 'job': '', 'username': 'qatest1', 'res': '10011', 'province': '99', 'gender': '', 'income': '', 'comments': 'province非法', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'province非法', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'province': '99', 'postcode': '', 'res': '10011', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -104,7 +105,7 @@ Traceback (most recent call last):
 AssertionError: 10000 != 10011
 
 ======================================================================
-FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'postcode': '', 'address': '', 'job': '', 'username': 'qatest1', 'res': '10011', 'province': '$%', 'gender': '', 'income': '', 'comments': 'province非法', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'education': '', 'industry': '', 'nickname': ''})
+FAIL: test_editinfo_cases (__main__.test_editinfo) (row={'comments': 'province非法', 'gender': '', 'nickname': '', 'job': '', 'industry': '', 'education': '', 'address': '', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'province': '$%', 'postcode': '', 'res': '10011', 'income': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 225, in test_editinfo_cases
@@ -112,7 +113,7 @@ Traceback (most recent call last):
 AssertionError: 10000 != 10011
 
 ======================================================================
-FAIL: test_findbindphone_cases (__main__.test_findbindphone) (row={'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10001', 'username': 'qatest1', 'comments': 'appid正确且成功'})
+FAIL: test_findbindphone_cases (__main__.test_findbindphone) (row={'res': '10001', 'comments': 'appid正确且成功', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L'})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 104, in test_findbindphone_cases
@@ -120,7 +121,7 @@ Traceback (most recent call last):
 AssertionError: 10000 != 10001
 
 ======================================================================
-FAIL: test_findbindphone_cases (__main__.test_findbindphone) (row={'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10001', 'username': 'qatest1', 'comments': 'username正确且成功'})
+FAIL: test_findbindphone_cases (__main__.test_findbindphone) (row={'res': '10001', 'comments': 'username正确且成功', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L'})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 104, in test_findbindphone_cases
@@ -128,7 +129,7 @@ Traceback (most recent call last):
 AssertionError: 10000 != 10001
 
 ======================================================================
-FAIL: test_getcode_cases (__main__.test_getcode) (row={'guid': '', 'phone': '15692005742', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10012', 'code_type': '', 'comments': 'code_type为空'})
+FAIL: test_getcode_cases (__main__.test_getcode) (row={'comments': 'code_type为空', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'res': '10012', 'guid': '', 'code_type': ''})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 137, in test_getcode_cases
@@ -136,7 +137,7 @@ Traceback (most recent call last):
 AssertionError: 10017 != 10012
 
 ======================================================================
-FAIL: test_getcode_cases (__main__.test_getcode) (row={'guid': '', 'phone': '15692005742', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10012', 'code_type': '0', 'comments': 'code_type非法-0'})
+FAIL: test_getcode_cases (__main__.test_getcode) (row={'comments': 'code_type非法-0', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'res': '10012', 'guid': '', 'code_type': '0'})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 137, in test_getcode_cases
@@ -144,7 +145,7 @@ Traceback (most recent call last):
 AssertionError: 10017 != 10012
 
 ======================================================================
-FAIL: test_getcode_cases (__main__.test_getcode) (row={'guid': '', 'phone': '15692005742', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10012', 'code_type': '3', 'comments': 'code_type非法-3'})
+FAIL: test_getcode_cases (__main__.test_getcode) (row={'comments': 'code_type非法-3', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'res': '10012', 'guid': '', 'code_type': '3'})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 137, in test_getcode_cases
@@ -152,7 +153,7 @@ Traceback (most recent call last):
 AssertionError: 10008 != 10012
 
 ======================================================================
-FAIL: test_getcode_cases (__main__.test_getcode) (row={'guid': '', 'phone': '15692005742', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10012', 'code_type': '%', 'comments': 'code_type非法字符'})
+FAIL: test_getcode_cases (__main__.test_getcode) (row={'comments': 'code_type非法字符', 'username': 'qatest1', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'res': '10012', 'guid': '', 'code_type': '%'})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 137, in test_getcode_cases
@@ -160,30 +161,14 @@ Traceback (most recent call last):
 AssertionError: 10017 != 10012
 
 ======================================================================
-FAIL: test_getcode_cases (__main__.test_getcode) (row={'guid': '', 'phone': '13427680261', 'username': 'qatest6', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10001', 'code_type': '1', 'comments': 'code_type正确且成功'})
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "Passport_Interface_Testing.py", line 137, in test_getcode_cases
-    self.assertEqual(response_dict["res"], eval(row['res']))    #获取验证码模块---您看到此信息,代表当行测试数据未通过---
-AssertionError: 10008 != 10001
-
-======================================================================
-FAIL: test_getcode_cases (__main__.test_getcode) (row={'guid': 'thisisguid', 'phone': '15692005742', 'username': '', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10001', 'code_type': '1', 'comments': 'username为空使用guid成功'})
+FAIL: test_getcode_cases (__main__.test_getcode) (row={'comments': 'username为空使用guid成功', 'username': '', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'phone': '15692005742', 'res': '10001', 'guid': 'thisisguid', 'code_type': '1'})
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "Passport_Interface_Testing.py", line 137, in test_getcode_cases
     self.assertEqual(response_dict["res"], eval(row['res']))    #获取验证码模块---您看到此信息,代表当行测试数据未通过---
 AssertionError: 10003 != 10001
 
-======================================================================
-FAIL: test_getcode_cases (__main__.test_getcode) (row={'guid': '', 'phone': '18011963147', 'username': 'testblind', 'appid': '4e7dHsOyi5QjgpiBiemIreX74f7VgUCg7L', 'res': '10001', 'code_type': '2', 'comments': 'testblind获取验证码用于修改密码'})
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "Passport_Interface_Testing.py", line 137, in test_getcode_cases
-    self.assertEqual(response_dict["res"], eval(row['res']))    #获取验证码模块---您看到此信息,代表当行测试数据未通过---
-AssertionError: 10009 != 10001
+Ran 8 tests in 16.934s
 
-----------------------------------------------------------------------
-Ran 8 tests in 16.067s
-
-FAILED (failures=23)
+FAILED (failures=20, errors=1)
